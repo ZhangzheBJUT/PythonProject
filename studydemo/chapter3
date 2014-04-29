@@ -1,0 +1,117 @@
+print 'hello world';print 'hello' # zhushi
+print 'hello \
+world'
+
+print ('''hello
+       world''')
+
+a = 3
+b = 4
+a,b = b,a
+print a,b
+
+
+y = a = a+1  #y = (a = a + 1 )
+print a,y
+
+#++a,--a
+x = y = z = 1
+print x,y,z
+
+x ,y,z = 1,2,'hello world'
+print x,y,z
+
+
+import PersonClass
+s = PersonClass.Student("zhangzhe",25,60,2)
+s.speak()
+#
+# import PersonClass as Test
+# s = Test.Student("zhanghze",23,32,2)
+# s.speak()
+#
+#
+#
+# from PersonClass import Student
+# s = Student("zhangzhe",25,60,2)
+# s.speak()
+
+
+s6 = 'I realy like "Python"!'
+s4 = 'Let\'s go'
+s3 = """fjksjfksjfksfjskf
+jfksjfksjfksfjskfjskf""" #world
+s2 = "hello wold\
+!"
+s1 = "hello\nworld"
+print  s6
+print s4
+print s3
+print s2
+print s1
+
+x = -2
+
+if x < .0:
+    print "x<0"
+elif x ==0:
+    print "x==0"
+else:
+    print "x>0"
+
+
+for item in ['hello','world','China']:
+    print item,
+
+
+x = 'helo world'
+for c in x:
+    print c,
+
+for index,ch in enumerate(x):
+    print ch,'(%d)' %(index)
+
+
+
+x = 'foo'
+for i in range(len(x)):
+    print x[i],'(%d)' %i
+
+
+
+
+square=[x*2 for x in range(4)]
+print square
+
+
+square=[x**2 for x in range(4)]
+print square
+
+square=[x*2 for x in range(4) if x%2==0 ]
+print square
+
+
+
+# try:
+#     filename = raw_input('Enter file name:')
+#     fobj = open(filename,'r')
+#     for eachLine in fobj:
+#         print eachLine,
+#     fobj.close()
+# except IOError,e:
+#     print 'file open error:',e
+
+
+
+def AddMe2Me(x=20):
+    return (x + x)
+
+print AddMe2Me()
+x = 10
+print AddMe2Me(x)
+print AddMe2Me('Python')
+AddMe2Me([1,'abc'])
+
+import  list
+dir(list)
+

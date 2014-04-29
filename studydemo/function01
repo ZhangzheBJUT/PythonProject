@@ -1,0 +1,78 @@
+def hello():
+    print 'hello world'
+
+res = hello()
+res
+
+print res
+print type(res)
+
+
+
+def foo():
+    return ['xyz',100000,-98.6]
+def bar():
+    return ['abc',[42,'python'],'Guido']
+
+print bar()
+
+
+aTuple = bar()
+x,y,z  = bar()
+(a,b,c) = bar()
+
+print aTuple
+print x,y,z
+print a,b,c
+
+
+def helloSomeone(who):
+    'returns a salutory string customized with the input'
+    return 'hello '+str(who)
+print helloSomeone('zhangzhe')
+
+
+def foo1():
+    'foo() -- properly create doc string.'
+    print 'in foo1()'
+    bar1()
+
+def bar1():
+    print 'in bar1()'
+
+bar1.__doc__ = 'Oops,forgot the doc str above.'
+bar1.version = 0.1
+
+foo1()
+print help(bar1)
+print bar1.version
+
+print bar1.__doc__
+
+funcPointer = bar1
+funcPointer()
+
+def funcArgument(argfunc):
+    argfunc()
+
+funcArgument(bar1)
+
+
+def convert(func,seq):
+    'conv. sequence of numbers to same type.'
+    return [func(eachNum) for eachNum in seq]
+myseq = (123,45.67,-6.2e8,999999L)
+print convert(int,myseq)
+print convert(long,myseq)
+print convert(float,myseq)
+
+
+def taxMe(cost,rate=0.0825):
+    return cost + (cost * rate)
+
+print taxMe(100)
+print taxMe(100,0.05)
+
+
+
+
