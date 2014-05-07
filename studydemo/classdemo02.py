@@ -81,9 +81,11 @@ ob.set_var1("class variable02")
 print oa.classVar  #changed.
 print ob.classVar  #class variable02
 
+
 ob.set_var2("inst variable")
 print ob.var2
 #print oa.var2  #error! because var2 is a instance variable
+
 
 
 
@@ -103,12 +105,15 @@ class Test:
 a = Test(3)
 print a.count #3
 #print a.name  #AttributeError:Test instance has no attribute 'name'
+#print a.__get_name() #AttributeError:Test instance has no attribute '__get_name'
 print Test.count #1
-print a.get_counte()
-#print a._Test_name
+print a.get_counte() #3
 
 print a.__dict__  #{'count': 3, '_Test__name': 'zhangzhe'}
-print a._Test__name
+print Test.__dict__ #{'count': 1, '__module__': 'classdemo02', '_Test__get_name': <function __get_name at 0x101e92500>, '__doc__': None, '__init__': <function __init__ at 0x101e92488>, 'get_counte': <function get_counte at 0x101e92578>}
+
+print a._Test__get_name() #zhangzhe
+print a._Test__name       #zhangzhe
 
 
 b = Test(-1)
@@ -116,3 +121,9 @@ print b.count    #1
 print Test.count #2
 
 
+def hello():
+    print "hello world"
+
+hello.__name__ = "hello function" #<function hello function at 0x10e92d050>
+
+print hello
